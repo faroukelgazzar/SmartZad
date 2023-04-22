@@ -1,29 +1,32 @@
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
-asgiref @ file:///C:/ci_311/asgiref_1676448296195/work
-astroid @ file:///D:/bld/astroid_1681739484424/work
+asgiref==3.5.2
+astroid==2.15.3
 bcrypt==4.0.1
 cffi==1.15.1
-colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1666700638685/work
-dill @ file:///home/conda/feedstock_root/build_artifacts/dill_1666603105584/work
-dj-database-url @ file:///home/conda/feedstock_root/build_artifacts/dj-database-url_1680038050565/work
-Django @ file:///C:/ci_311/django_1676469589007/work
+colorama==0.4.6
+dill==0.3.6
+dj-database-url==1.3.0
+Django==4.1
 django-environ==0.4.5
 gunicorn==20.1.0
-isort @ file:///home/conda/feedstock_root/build_artifacts/isort_1675033873689/work
-lazy-object-proxy @ file:///C:/ci_311/lazy-object-proxy_1676432050939/work
-mccabe @ file:///home/conda/feedstock_root/build_artifacts/mccabe_1643049622439/work
-platformdirs @ file:///home/conda/feedstock_root/build_artifacts/platformdirs_1679871349196/work
-psycopg2 @ file:///C:/ci_311/psycopg2_1676454061167/work
-psycopg2-binary @ file:///home/conda/feedstock_root/build_artifacts/psycopg2-split_1672159209258/work/psycopg2-binary
+isort==5.12.0
+lazy-object-proxy==1.6.0
+mccabe==0.7.0
+pip==23.0.1
+platformdirs==3.2.0
+psycopg2==2.9.3
+psycopg2-binary==2.9.3
 pycparser==2.21
-pylint @ file:///home/conda/feedstock_root/build_artifacts/pylint_1680721927628/work
-pylint-django @ file:///home/conda/feedstock_root/build_artifacts/pylint-django_1649332822889/work
-pylint-plugin-utils @ file:///home/conda/feedstock_root/build_artifacts/pylint-plugin-utils_1640798952054/work
-six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
-sqlparse @ file:///C:/ci_311/sqlparse_1676456541280/work
-tomli @ file:///home/conda/feedstock_root/build_artifacts/tomli_1644342247877/work
-tomlkit @ file:///home/conda/feedstock_root/build_artifacts/tomlkit_1679924068997/work
-typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1678559861143/work
-tzdata @ file:///tmp/build/80754af9/python-tzdata_1611693927741/work
-wrapt @ file:///C:/ci_311/wrapt_1676432805090/work
+pylint==2.17.2
+pylint-django==2.5.3
+pylint-plugin-utils==0.7
+setuptools==66.0.0
+six==1.16.0
+sqlparse==0.4.3
+tomli==2.0.1
+tomlkit==0.11.7
+typing_extensions==4.5.0
+tzdata==2021.1
+wheel==0.38.4
+wrapt==1.14.1
