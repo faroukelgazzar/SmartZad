@@ -29,4 +29,5 @@ tomlkit==0.11.7
 typing_extensions==4.5.0
 tzdata==2021.1
 wheel==0.38.4
+whitenoise==6.4.0
 wrapt==1.14.1
