@@ -37,7 +37,7 @@ SECRET_KEY = 'django-insecure-)y^tg-m2q_s*=mamh_438p=-!=6qb#6sa=2lg^e_%rb9wm@a+=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh','*']
 
 
 # Application definition
@@ -146,17 +146,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
-if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
-    # in your application directory on Render.
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    # Turn on WhiteNoise storage backend that takes care of compressing static files
-    # and creating unique names for each version so they can safely be cached forever.
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-else:
-    STATICFILES_DIRS = [
-        STATIC_DIR,
-    ]
+STATIC_URL = "static/",
+STATICFILES_DIRS = [
+    STATIC_DIR,
+],
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'staticfiles'),
+
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = 'media/'
 
