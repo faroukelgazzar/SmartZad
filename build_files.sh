@@ -1,7 +1,7 @@
 # build_files.sh
 #python manage.py collectstatic
 #pip list --format=freeze > requirements.txt
-
+#python manage.py check --deploy
 
 
 #poetry install
