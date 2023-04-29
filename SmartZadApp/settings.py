@@ -161,7 +161,7 @@ STATICFILES_DIRS = [
 # in your application directory on Render.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 WHITENOISE_AUTOREFRESH = True
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 
