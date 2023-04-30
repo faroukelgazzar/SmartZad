@@ -35,8 +35,8 @@ MEDIA_DIR = os.path.join(BASE_DIR, "media")
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', False) == 'True'
-
+DEBUG = True
+#DEBUG = os.getenv('DEBUG', False) == 'True'
 ALLOWED_HOSTS = ['*']
 
 
@@ -101,8 +101,10 @@ DATABASES = {
 # Render PostgreSQL database(Live)
 
 import dj_database_url
-
+print(env('DATABASE_URL'))
+print(dj_database_url.parse(env('DATABASE_URL')))
 DATABASES = {
+    #'default': dj_database_url.config(env('DATABASE_URL'))
     'default': dj_database_url.parse(env('DATABASE_URL'))
     
     
@@ -162,7 +164,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 WHITENOISE_AUTOREFRESH = True
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
 
@@ -175,3 +177,6 @@ MEDIA_URL = 'media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'SystemUsers/login.html'
+LOGOUT_URL = 'SystemUsers/login.html'
