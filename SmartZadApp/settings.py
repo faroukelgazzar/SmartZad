@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'Dashboard',
     'Users',  
 ]
-
+AUTH_USER_MODEL = 'Users.User'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',

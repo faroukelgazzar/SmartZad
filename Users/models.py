@@ -1,24 +1,60 @@
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
-
-# Create your models here.
-# from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
-# from django.db import models
-# from django.utils import timezone
-# from django.utils.translation import gettext_lazy as _
-
-# from .managers import CustomUserManager
+from django.utils import timezone
 
 
-# class CustomUser(AbstractBaseUser, PermissionsMixin):
-#     email = models.EmailField(_("email address"), unique=True)
-#     is_staff = models.BooleanField(default=False)
-#     is_active = models.BooleanField(default=True)
-#     date_joined = models.DateTimeField(default=timezone.now)
+class UserManager(BaseUserManager):
 
-#     USERNAME_FIELD = "email"
-#     REQUIRED_FIELDS = []
+  def _create_user(self, email, password, is_staff, is_superuser, **extra_fields):
+    if not email:
+        raise ValueError('Users must have an email address')
+    now = timezone.now()
+    email = self.normalize_email(email)
+    user = self.model(
+        email=email,
+        is_staff=is_staff, 
+        is_active=True,
+        is_superuser=is_superuser, 
+        last_login=now,
+        date_joined=now, 
+        **extra_fields
+    )
+    user.set_password(password)
+    user.save(using=self._db)
+    return user
 
-#     objects = CustomUserManager()
+  def create_user(self, email, password,name, **extra_fields):
+    return self._create_user(email, password, False, False, **extra_fields)
 
-#     def __str__(self):
-#         return self.email
+  def create_superuser(self, email, password, **extra_fields):
+    user=self._create_user(email, password, True, True, **extra_fields)
+    return user
+
+
+class User(AbstractBaseUser, PermissionsMixin):
+    Department_CHOICES = (
+        ('Supply Chain', 'Supply Chain'),
+        ('Warehouse', 'Warehouse'),
+        ('Procurement', 'Procurement'),
+        ('Live Ops', 'Live Ops'),
+    )
+    email = models.EmailField(max_length=254, unique=True)
+    name = models.CharField(max_length=254, null=True, blank=True)
+    department = models.CharField(max_length=60, choices=Department_CHOICES)
+    profile_tittle = models.CharField(blank=True, max_length=60)
+    profile_Pic = models.ImageField(blank=True, upload_to='profile_pics/')
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    last_login = models.DateTimeField(null=True, blank=True)
+    date_joined = models.DateTimeField(auto_now_add=True)
+    
+
+    USERNAME_FIELD = 'email'
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    objects = UserManager()
+
+    def get_absolute_url(self):
+        return "/users/%i/" % (self.pk)
