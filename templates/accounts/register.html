@@ -70,22 +70,15 @@
 														<label class="col-lg-4 col-form-label required fw-semibold fs-6">Full Name</label>
 														<!--end::Label-->
 														<!--begin::Col-->
-														<div class="col-lg-8">
-															<!--begin::Row-->
-															<div class="row">
+
 																<!--begin::Col-->
-																<div class="col-lg-6 fv-row">
+																<div class="col-lg-8 fv-row">
 																	<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="First name" />
 																</div>
 																<!--end::Col-->
 																<!--begin::Col-->
-																<div class="col-lg-6 fv-row">
-																	<input type="text" name="lname" class="form-control form-control-lg form-control-solid" placeholder="Last name" value="Last name" />
-																</div>
+
 																<!--end::Col-->
-															</div>
-															<!--end::Row-->
-														</div>
 														<!--end::Col-->
 													</div>
 													<!--end::Input Full Name-->
@@ -129,11 +122,35 @@
 														<!--end::Label-->
 														<!--begin::Col-->
 														<div class="col-lg-8 fv-row">
+															<select name="country" aria-label="Select a Department" data-control="select2" data-placeholder="Select a Department..." class="form-select form-select-solid form-select-lg fw-semibold">
+																<option value="">Select a Department...</option>
+																<option  value="AF">Afghanistan</option>
+															</select>
+														</div>
+														<!--end::Col-->
+													</div>
+													<!--end::Input Department-->
+
+
+
+
+													<!--begin::Input Department-->
+													<div class="row mb-6">
+														<!--begin::Label-->
+														<label class="col-lg-4 col-form-label fw-semibold fs-6">Department</label>
+														<!--end::Label-->
+														<!--begin::Col-->
+														<div class="col-lg-8 fv-row">
 															<input type="text" name="department" class="form-control form-control-lg form-control-solid" placeholder="department" value="Enter Department" />
 														</div>
 														<!--end::Col-->
 													</div>
 													<!--end::Input Department-->
+
+
+
+
+													
 													<!--begin::Permission Group-->
 													<div class="row mb-6">
 														<!--begin::Label-->

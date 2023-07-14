@@ -10,15 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import dj_database_url
 from pathlib import Path
 import os
 import environ
 
-#Define Environment Varaiable
+# Define Environment Varaiable
 env = environ.Env()
 
 environ.Env.read_env()
-
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-#DEBUG = os.getenv('DEBUG', False) == 'True'
+# DEBUG = os.getenv('DEBUG', False) == 'True'
 ALLOWED_HOSTS = ['*']
 
 
@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Dashboard',
-    'Users',  
+    'Users',
+    'partners',
 ]
 AUTH_USER_MODEL = 'Users.User'
 MIDDLEWARE = [
@@ -63,7 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
 ]
 
 ROOT_URLCONF = 'SmartZadApp.urls'
@@ -100,14 +101,13 @@ DATABASES = {
 
 # Render PostgreSQL database(Live)
 
-import dj_database_url
 print(env('DATABASE_URL'))
 print(dj_database_url.parse(env('DATABASE_URL')))
 DATABASES = {
-    #'default': dj_database_url.config(env('DATABASE_URL'))
+    # 'default': dj_database_url.config(env('DATABASE_URL'))
     'default': dj_database_url.parse(env('DATABASE_URL'))
-    
-    
+
+
 }
 
 # Password validation
@@ -164,10 +164,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 WHITENOISE_AUTOREFRESH = True
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-
-
-
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
 MEDIA_ROOT = MEDIA_DIR
