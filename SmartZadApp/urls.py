@@ -19,9 +19,12 @@ from Dashboard import views
 from Users import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+app_name = 'partners'
+
 urlpatterns = [
     path("", views.index, name='index'),
     path('admin/', admin.site.urls),
-    path("accounts/",include('Users.urls')),
+    path("accounts/", include('Users.urls')),
+    path("partners/", include('partners.urls')),
     path("logout/", views.user_logout, name='logout'),
 ]
