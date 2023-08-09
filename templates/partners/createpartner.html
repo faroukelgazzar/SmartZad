@@ -62,7 +62,7 @@
 							<!--begin::Content-->
 							<div id="kt_account_settings_profile_details" class="collapse show">
 								<!--begin::Form-->
-								<form id="kt_account_profile_details_form" class="form">
+								<form id="kt_account_profile_details_form" class="form" data-kt-redirect-url="index.html" action={% url 'partners:addnewpartner' %} method="POST">
 									{% csrf_token %}
 									<!--begin::Card body-->
 									<div class="card-body border-top p-9">
@@ -76,7 +76,7 @@
 
 													<!--begin::Col-->
 													<div class="col-lg-8 fv-row">
-														<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Business Name" value="Business Name" />
+														<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Business Name" />
 													</div>
 													<!--end::Col-->
 													<!--begin::Col-->
@@ -92,7 +92,7 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="mail" value="name@domain.com" />
+												<input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="name@domain.com"  />
 											</div>
 											<!--end::Col-->
 										</div>
@@ -101,7 +101,7 @@
 										<div class="row mb-6">
 											<!--begin::Label-->
 											<label class="col-lg-4 col-form-label fw-semibold fs-6">
-												<span class="required">Job Tittle</span>
+												<span class="required">Database Name</span>
 												<span class="ms-1" data-bs-toggle="tooltip" title="Phone number must be active">
 													<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
 														<span class="path1"></span>
@@ -113,12 +113,12 @@
 											<!--end::Label-->
 											<!--begin::Col-->
 											<div class="col-lg-8 fv-row">
-												<input type="text" name="job tittle" class="form-control form-control-lg form-control-solid" placeholder="job Tittle" value="Enter Job Tittle" />
+												<input type="text" name="job tittle" class="form-control form-control-lg form-control-solid" placeholder="Database Name" />
 											</div>
 											<!--end::Col-->
 										</div>
 										<!--end::Job Tittle-->
-										<!--begin::Input Department-->
+										{% comment %} <!--begin::Input Department-->
 										<div class="row mb-6">
 											<!--begin::Label-->
 											<label class="col-lg-4 col-form-label fw-semibold fs-6">Department</label>
@@ -400,7 +400,7 @@
 											</div>
 											<!--end::Col-->
 										</div>
-										<!--end::Permission Group-->
+										<!--end::Permission Group--> {% endcomment %}
 									
 										
 										

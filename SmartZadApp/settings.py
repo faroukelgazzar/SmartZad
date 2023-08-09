@@ -97,9 +97,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-'''
-
-# Render PostgreSQL database(Live)
 
 print(env('DATABASE_URL'))
 print(dj_database_url.parse(env('DATABASE_URL')))
@@ -108,6 +105,22 @@ DATABASES = {
     'default': dj_database_url.parse(env('DATABASE_URL'))
 
 
+}
+
+'''
+
+# Render PostgreSQL database(Live)
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ZADMasterDB',
+        'USER': 'zadsuperuser',
+        'PASSWORD': 'Zad.382023',
+        'HOST': 'zadinsrance.cvmoyxaevjaj.eu-north-1.rds.amazonaws.com',
+        'PORT': '5432',
+    }
 }
 
 # Password validation
