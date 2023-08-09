@@ -18,6 +18,9 @@ from django.urls import path, include
 from Dashboard import views
 from Users import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings  # new
+from django.conf.urls.static import static  # new
+
 
 app_name = 'partners'
 
@@ -28,3 +31,9 @@ urlpatterns = [
     path("partners/", include('partners.urls')),
     path("logout/", views.user_logout, name='logout'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_URL)
