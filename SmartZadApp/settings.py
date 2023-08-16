@@ -114,12 +114,12 @@ DATABASES = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ZADMasterDB',
-        'USER': 'zadsuperuser',
+        'ENGINE': 'django.db.backends.postgresql_psycpg2',
+        'NAME': 'zadmaster',
+        'USER': 'admin',
         'PASSWORD': 'Zad.382023',
-        'HOST': 'zadinsrance.cvmoyxaevjaj.eu-north-1.rds.amazonaws.com',
-        'PORT': '5432',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
